@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    build:
+      dockerfile: Dockerfile
+    depends_on:
+     - db
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 8888:80
+    networks:
+      - dev
+
+  db:
+    container_name: db_data
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'secret'
+      MYSQL_DATABASE: 'database'
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - 3333:3306
+    networks:
+      - dev
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8889:80'
+    restart: always
+    environment:
+      PMA_HOST: db_data
+    depends_on:
+      - db
+    networks:
+      - dev
+
+networks:
+  dev:

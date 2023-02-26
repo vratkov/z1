@@ -1,0 +1,36 @@
+body {
+    background-color: #3a79b6;
+}
+
+.wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.form-signin {
+    max-width: 480px;
+    padding: 35px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    margin-top: 25px;
+    border-radius: 15px;
+}
+
+.form-signin input[type="password"] {
+    margin-top: 15px;
+}
+
+.form-signin button[type="submit"] {
+    margin-top: 30px;
+    border-radius: 15px;
+    background-color: #3a79b6;
+}
