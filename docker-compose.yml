@@ -6,15 +6,13 @@ services:
       dockerfile: Dockerfile
     depends_on:
      - db
-    volumes:
-      - .:/var/www/html/
     ports:
       - 8888:80
     networks:
       - dev
 
   db:
-    container_name: db_data
+    container_name: mariadb
     image: mariadb:latest
     restart: always
     environment:
@@ -30,12 +28,13 @@ services:
       - dev
 
   phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
       - '8889:80'
     restart: always
     environment:
-      PMA_HOST: db_data
+      PMA_HOST: mariadb
     depends_on:
       - db
     networks:

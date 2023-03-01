@@ -151,7 +151,7 @@ Connection::closeConnection();
                 <nav class="navbar navbar-custom">
                     <div class="container-fluid">
                         <ul class="nav navbar-nav navbar-right">
-                            <form class="form-signin" action="/logout.php">
+                            <form class="form-signin" action="logout.php">
                                 <button class="btn btn-block" type="submit">Log out</button>
                             </form>
                         </ul>

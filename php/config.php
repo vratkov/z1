@@ -9,7 +9,7 @@ if (file_exists(__DIR__ . "/.env")) {
 
 session_status() === PHP_SESSION_ACTIVE || session_start();
 
-//error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 error_reporting(0);
 
 define("PHP_ENVIRONMENT", $_ENV['PHP_ENVIRONMENT']);

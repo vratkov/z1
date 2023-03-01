@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="wrapper">
-    <form class="form-signin" action="/index.php" method="post">
+    <form class="form-signin" action="index.php" method="post">
         <h2 class="form-signin-heading">Invoices</h2>
         <?php if ($loginError ?? false) { ?>
             <div class="alert alert-warning"><?php echo $loginError?? 'Login Error!'; ?></div>
